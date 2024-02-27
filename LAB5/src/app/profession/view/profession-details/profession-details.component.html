@@ -1,0 +1,66 @@
+<p>profession-details works!</p>
+<div *ngIf="profession" class="container mt-4">
+    <h2 class="mb-4">Informacje o Profesji</h2>
+
+    <div class="row">
+        <div class="col-md-3">
+            <span class="font-weight-bold">ID:</span>
+        </div>
+        <div class="col-md-9">
+            <span>{{ profession.id }}</span>
+        </div>
+    </div>
+
+
+    <div class="row mt-2">
+        <div class="col-md-3">
+            <span class="font-weight-bold">Imie:</span>
+        </div>
+        <div class="col-md-9">
+            <span>{{ profession.name }}</span>
+        </div>
+    </div>
+
+
+
+    <div class="row mt-2">
+        <div class="col-md-3">
+            <span class="font-weight-bold">Pancerz:</span>
+        </div>
+        <div class="col-md-9">
+            <span>{{ profession.baseArmor }}</span>
+        </div>
+    </div>
+
+</div>
+
+<div class="container mt-4">
+    <h2>Lista Broni</h2>
+    <p><button class="btn btn-primary" [routerLink]="['/professions', professionId, 'add-weapon']">Dodaj nową broń</button></p>
+    <table class="table">
+        <thead>
+        <tr>
+            <th>Nazwa Broni</th>
+            <th>Obrażenia</th>
+            <th>Edytuj</th>
+            <th>Usuń</th>
+            <th>Szczegóły</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr *ngFor="let weapon of weapons">
+            <td>{{ weapon.name }}</td>
+            <td>{{ weapon.damage }}</td>
+            <td>
+                <button class="btn btn-warning" [routerLink]="['/weapons', weapon.id, 'edit']">Edytuj</button>
+            </td>
+            <td>
+                <button class="btn btn-danger" (click)="deleteWeapon(weapon.id)">Usuń</button>
+            </td>
+            <td>
+                <button class="btn btn-info" [routerLink]="['/weapons', weapon.id]">Szczegóły</button>
+            </td>
+        </tr>
+        </tbody>
+    </table>
+</div>

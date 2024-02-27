@@ -1,0 +1,28 @@
+<p>professions-list works!</p>
+<div class="container mt-4">
+  <h2>Lista Profesji</h2>
+  <table class="table">
+    <thead>
+    <tr>
+      <th>Imię</th>
+      <th>Pancerz</th>
+    </tr>
+    </thead>
+    <tbody>
+    <tr *ngFor="let profession of professions">
+      <td>{{ profession.name }}</td>
+      <td>{{ profession.baseArmor }}</td>
+      <td>
+        <button class="btn btn-danger" (click)="deleteProfession(profession.id)">Usuń</button>
+        <span class="mx-2"></span> <!-- Dodany większy odstęp -->
+        <button class="btn btn-primary" [routerLink]="['/professions', profession.id, 'edit']">Edytuj</button>
+        <span class="mx-2"></span> <!-- Dodany większy odstęp -->
+        <button class="btn btn-primary" [routerLink]="['/professions', profession.id]">Szczegóły</button>
+      </td>
+    </tr>
+    </tbody>
+  </table>
+  <div class="button-container mt-3">
+    <button class="btn btn-success" routerLink="/add-profession">Dodaj nową profesję</button>
+  </div>
+</div>

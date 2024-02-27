@@ -1,0 +1,28 @@
+<div class="container mt-4">
+  <h2>Dodaj nowe zamówienie</h2>
+  <form [formGroup]="weaponForm" (ngSubmit)="addWeapon()">
+    <div class="row">
+      <div class="col-md-3">
+        <label for="name">Nazwa Broni:</label>
+      </div>
+      <div class="col-md-9">
+        <input type="text" id="name" formControlName="name" class="form-control" />
+      </div>
+    </div>
+
+    <div class="row mt-2">
+      <div class="col-md-3">
+        <label for="damage">Obrażenia:</label>
+      </div>
+      <div class="col-md-9">
+        <input type="text" id="damage" formControlName="damage" class="form-control" />
+      </div>
+    </div>
+
+    <div class="row mt-4">
+      <div class="col">
+        <button type="submit" class="btn btn-success">Dodaj broń</button>
+      </div>
+    </div>
+  </form>
+</div>
