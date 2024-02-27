@@ -1,0 +1,20 @@
+spring:
+  cloud:
+    gateway:
+      routes:
+        - id: RPG-Profession-1
+          uri: http://localhost:8082
+          predicates:
+            - Path=/api/professions/{professionId}
+            - Path=/api/professions
+        - id: RPG-Weapon-1
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/weapons
+            - Path=/api/weapons/**
+        - id: RPG-Weapon-2
+          uri: http://localhost:8081
+          predicates:
+            - Path=/api/professions/{professionId}/weapons
+            - Path=/api/professions/{professionName}/weapons
+            - Path=/api/professions/{professionId}/weapons/**
