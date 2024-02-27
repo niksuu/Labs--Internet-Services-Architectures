@@ -1,0 +1,77 @@
+### Get professions
+GET http://localhost:8080/api/professions
+
+
+### create/update 1
+PUT http://localhost:8080/api/professions/44f222d6-a76d-44c0-afec-474489e31bc4
+Content-Type: application/json
+
+{
+  "name": "Wariat",
+  "baseArmor": "32"
+}
+
+
+### create/update
+PUT http://localhost:8080/api/professions/23f222d6-a76d-44c0-afec-474489e31bc4
+Content-Type: application/json
+
+{
+  "name": "Zlodziej",
+  "baseArmor": "14"
+}
+
+### udpate
+PUT http://localhost:8080/api/professions/23f222d6-a76d-44c0-afec-474489e31bc4
+Content-Type: application/json
+
+{
+"name": "Zlodziej",
+"baseArmor": "18"
+}
+
+
+### Get profession by Id
+
+GET http://localhost:8080/api/professions/23f222d6-a76d-44c0-afec-474489e31bc4
+
+### Delete Profession by ID
+
+DELETE http://localhost:8080/api/professions/23f222d6-a76d-44c0-afec-474489e31bc4
+
+
+### Get weapons
+GET http://localhost:8080/api/weapons
+
+### Find weapon by name
+GET http://localhost:8080/api/weapons/Ice-Wand
+
+### Find weapon by ProfessionName
+
+GET http://localhost:8080/api/weapons/Zlodziej/weapons
+
+### create/update
+PUT http://localhost:8080/api/weapons/342222d6-a76d-44c0-afec-474489e31bc4
+Content-Type: application/json
+
+{
+  "name": "Kosa",
+  "damage": 62,
+  "profession": "23f222d6-a76d-44c0-afec-474489e31bc4"
+}
+
+### create/update
+PUT http://localhost:8080/api/weapons/092222d6-a76d-44c0-afec-474489e31bc4
+Content-Type: application/json
+
+{
+  "name": "Kosa",
+  "damage": 22,
+  "profession": "99f222d6-a76d-44c0-afec-474489e31bc4"
+}
+
+### delete
+
+DELETE http://localhost:8080/api/weapons/342222d6-a76d-44c0-afec-474489e31bc4
+
+
